@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# __define-ocg__: I am starting this script by defining the required variables
+varFiltersCg="http://github.com/coderbyte-org/big-o"  # This is the repository URL I will clone
+varOcg="feature-branch-2"                            # This is the new branch I want to create
+
+# I will clone the repository from the URL stored in varFiltersCg
+git clone "$varFiltersCg"
+
+# Now I will go into the project directory
+cd big-o || exit
+
+# I am creating a new branch with the name stored in varOcg and switching to it
+git checkout -b "$varOcg"
+
+# I am creating a file named __test__.txt and adding "test content" to it
+echo "test content" > __test__.txt
+
+# I will stage the newly created file
+git add __test__.txt
+
+# Finally, I will print the current git status
+git status
